@@ -36,6 +36,7 @@ php artisan db:seed
 + MySQL 11.8.3
   
 ##ER図
+<img width="721" height="500" alt="Image" src="https://github.com/user-attachments/assets/1755351d-c41a-4886-82cd-49697734d3d5" />
 
 ##URL
 + 開発環境：http://localhost/
