@@ -1,0 +1,54 @@
+/*-------------------------------------------
+ ■ common
+-------------------------------------------*/
+
+.sub-title{
+   font-size: 32px;
+}
+
+.input-common{
+    border: 1px solid #E0DFDE;
+    border-radius: 5px;
+}
+
+li{
+    list-style: none;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 48px;
+}
+
+/*-------------------------------------------
+ ■ header
+-------------------------------------------*/
+
+@font-face {
+    font-family: 'jsMath-cmti10';
+    src: url('../fonts/jsMath-cmti10.ttf') format('truetype');
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    text-align: left;
+    height: 50px;
+}
+
+.header-title {
+    color: #F5C800;
+    font-family: 'jsMath-cmti10',sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+}

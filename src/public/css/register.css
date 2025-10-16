@@ -1,0 +1,128 @@
+/*-------------------------------------------
+ ■ total valance
+-------------------------------------------*/
+body {
+    background-color: #F8F8F8;
+}
+
+.register__inner {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.register-form {
+    padding: 5px;
+    width: 40vw;
+}
+
+/*-------------------------------------------
+ ■ parts detail
+-------------------------------------------*/
+
+.register-content__label {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+
+}
+
+.register-content__label--span:first-of-type {
+    padding: 2px 8px;
+    background-color: #FD0707;
+    color: #FFFFFF;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.register-content__label--span:nth-of-type(2) {
+    color: #FD0707;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.radio-label__input {
+    margin-right: 5px;
+}
+
+
+.register-content__input,
+.register-content__textarea,
+.register-content__image {
+    display: block;
+    width: 100%;
+}
+
+.register-content__group,
+.register-content__title {
+    padding: 5px;
+}
+
+.register-content__input,
+.register-content__textarea {
+    padding: 12px;
+    background-color: #FFFFFF;
+}
+
+
+.register-content__textarea {
+    height: 150px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.register-content__title {
+    text-align: left;
+}
+
+
+.register-content__btns {
+    text-align: center;
+}
+
+.register-content__btns--back,
+.register-content__btns--register {
+    display: inline-block;
+    width: 25%;
+    margin: 0 auto;
+    height: 50px;
+}
+
+.register-content__btns--back {
+    background-color: #E0DFDE;
+}
+
+.register-content__btns--register {
+    background-color: #F5C800;
+    margin-left: 15px;
+}
+
+.register-content__radios {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-preview {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+/* error */
+.errors-message {
+    color: #FD0707;
+    font-size: 14px;
+}
+
+/*-------------------------------------------
+ ■ responsive
+-------------------------------------------*/
+@media screen and (max-width:1280px) {
+
+    .content{
+        padding: 0;
+    }
+
+}
