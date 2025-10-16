@@ -1,6 +1,6 @@
 # laravel-docker-template
-##環境構築
-###Dokerビルド
+## 環境構築
+### Dokerビルド
 1. git clone git@github.com:shiorimorita/fruit-list.git
 2. DockerDesktopアプリを立ち上げる
 3. docker-compose up -d --build
@@ -13,7 +13,7 @@ mysql:
     environment:
 ```
 
-###Laravel環境構築
+### Laravel環境構築
 1. docker-compose exec php bash
 2. composer install
 3. 「.env.example」ファイルを 「.env」ファイルに命名を変更。
@@ -30,14 +30,14 @@ php artisan migrate
 php artisan db:seed
 ```
 
-##使用技術(実行環境)
+## 使用技術(実行環境)
 + PHP 8.4.11
 + Laravel 8.83.8
 + MySQL 11.8.3
   
-##ER図
+## ER図
 <img width="721" height="500" alt="Image" src="https://github.com/user-attachments/assets/1755351d-c41a-4886-82cd-49697734d3d5" />
 
-##URL
+## URL
 + 開発環境：http://localhost/
 + phpMyAdmin:：http://localhost:8080/
