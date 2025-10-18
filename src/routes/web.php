@@ -14,11 +14,23 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('register');
-// });
-
-Route::get('/products/register',function(){
-    return view('register');
-});
+/* product register */
+Route::get('/products/register',[ProductController::class, 'registerView']);
 Route::post('/products/register',[ProductController::class,'register']);
+
+/* product view */
+Route::get('/products',[ProductController::class, 'productsView']);
+
+/* search */
+Route::get('/products/search', [ProductController::class, 'search']);
+
+/* product detail */
+Route::get('/products/{id}',[ProductController::class,'detail']);
+
+/* product update */
+Route::patch('/products/{id}/update',[ProductController::class,'update']);
+
+
+/* product delete */
+Route::delete('/products/{id}/delete',[ProductController::class,'delete']);
+

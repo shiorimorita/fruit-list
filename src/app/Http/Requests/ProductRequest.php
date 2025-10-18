@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
             'price'=>['numeric', 'min:0', 'max:10000'],
             'image'=>['required','mimes:jpeg,png'],
             'description'=>['required','max:120'],
+            'seasons'=>['required'],
         ];
     }
 
@@ -44,6 +45,7 @@ class ProductRequest extends FormRequest
             'description.max'=> '120文字以内で入力してください',
             'image.required'=> '商品画像を登録してください',
             'image.mimes'=> '「.png」または「.jpeg」形式でアップロードしてください',
+            'seasons.required' => '季節を選択してください',
         ];
     }
 
@@ -59,8 +61,8 @@ class ProductRequest extends FormRequest
             }
 
             /* image */
-            $image = $this->input('image');
-            if($image === null || $image === ''){
+            $image = $this->file('image');
+            if(! $image){
                 $validator->errors()->add('image', '商品画像を登録してください');
                 $validator->errors()->add('image', '「.png」または「.jpeg」形式でアップロードしてください');
             }

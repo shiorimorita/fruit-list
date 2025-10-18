@@ -15,6 +15,10 @@ li{
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 .app {
     display: flex;
     flex-direction: column;
@@ -28,6 +32,12 @@ li{
     flex-grow: 1;
     justify-content: center;
     padding: 48px;
+}
+
+/* error */
+.errors-message {
+    color: #FD0707;
+    font-size: 14px;
 }
 
 /*-------------------------------------------

@@ -15,27 +15,21 @@
                         class="register-content__label--span">必須</span></label>
                 <input type="text" class="register-content__input input-common" placeholder="商品名を入力" id="name"
                     name="name" value="{{old('name')}}">
-                <ul class="errors-group">
-                    @if($errors->has('name'))
-                    @foreach($errors->get('name') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
-                </ul>
-                @endif
             </div>
+            <ul class="errors-group">
+                @if($errors->has('name'))
+                @foreach($errors->get('name') as $error)
+                <li class="errors-message">{{$error}}</li>
+                @endforeach
+            </ul>
+            @endif
 
             <div class="register-content__group">
                 <label for="price" class="register-content__label">値段<span
                         class="register-content__label--span">必須</span></label>
                 <input type="text" class="register-content__input input-common" placeholder="値段を入力" id="price"
                     name="price" value="{{old('price')}}">
-                <ul class="errors-group">
-                    @if($errors->has('price'))
-                    @foreach($errors->get('price') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
-                </ul>
-                @endif
+
             </div>
 
             <div class="register-content__group">
@@ -43,7 +37,7 @@
                         class="register-content__label--span">必須</span></label>
                 <!-- preview -->
                 <img src="" alt="画像プレビュー" class="image-preview">
-                <input type="file" name="image" class="register-content__image" id="image" value="{{old('image')}}">
+                <input type="file" name="image" class="register-content__image" id="image">
 
 
                 <img src="" alt="">
@@ -63,11 +57,18 @@
                         class="register-content__label--span">複数選択可</span></label>
 
                 <div class="register-content__radios">
-                    <label for="" class="radio-label"><input type="radio" class="radio-label__input">春</label>
-                    <label for="" class="radio-label"><input type="radio" class="radio-label__input">夏</label>
-                    <label for="" class="radio-label"><input type="radio" class="radio-label__input">秋</label>
-                    <label for="" class="radio-label"><input type="radio" class="radio-label__input">冬</label>
+                    @foreach($seasons as $season)
+                    <label for="" class="radio-label"><input type="checkbox" class="radio-label__input"
+                            value="{{$season->id}}" name="seasons[]">{{$season->name}}</label>
+                    @endforeach
                 </div>
+                <ul class="errors-group">
+                    @if($errors->has('seasons'))
+                    @foreach($errors->get('seasons') as $error)
+                    <li class="errors-message">{{$error}}</li>
+                    @endforeach
+                    @endif
+                </ul>
             </div>
 
             <div class="register-content__group">
@@ -85,7 +86,7 @@
             </div>
 
             <div class="register-content__btns">
-                <input type="button" value="戻る" class="register-content__btns--back" onclick="history.back()">
+                <input type="button" value="戻る" class="register-content__btns--back" onclick="location.href='/products/register' ">
                 <input type="submit" value="登録" class="register-content__btns--register">
             </div>
         </form>
