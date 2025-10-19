@@ -75,19 +75,12 @@ class ProductController extends Controller
             ->sortByPrice($request->sort)
             ->paginate(6);
 
-        /* 並び替えラベル */
-        // $sort_label = match ($request->sort) {
-        //     'price_up' => '価格の高い順',
-        //     'price_down' => '価格の安い順',
-        //     default=>''
-        // };
-
         $sort_labels =[
             'price_up' => '価格の高い順',
             'price_down' => '価格の安い順'
         ];
 
-        $sort_label=$sort_labels[$request->sort];
+        $sort_label=$sort_labels[$request->sort] ?? '';
 
         return view('index', compact('products', 'sort_label'));
     }
