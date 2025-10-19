@@ -51,25 +51,35 @@ class ProductRequest extends FormRequest
 
     public function withValidator($validator){
         $validator->after(function ($validator) {
-            $price = $this->input('price');
 
             /* price */
-            if ($price === null || $price === '') {
-                $validator->errors()->add('price', '値段を入力してください');
+            $price = $this->input('price');
+
+            if($price === null){
+                $validator->errors()->add('price','値段を入力してください');
+                $validator->errors()->add('price', '数値で入力してください');
+                $validator->errors()->add('price', '0~10000円以内で入力してください');
+            }elseif(! is_numeric($price)){
                 $validator->errors()->add('price', '数値で入力してください');
                 $validator->errors()->add('price', '0~10000円以内で入力してください');
             }
 
             /* image */
             $image = $this->file('image');
-            if(! $image){
+
+            if($image === null){
                 $validator->errors()->add('image', '商品画像を登録してください');
+                $validator->errors()->add('image', '「.png」または「.jpeg」形式でアップロードしてください');
+            } 
+            elseif (!$image->isValid() || !in_array(strtolower($image->extension()), ['jpeg', 'jpg', 'png'])) {
+                // ファイルがある場合は形式チェックのみ
                 $validator->errors()->add('image', '「.png」または「.jpeg」形式でアップロードしてください');
             }
 
             /* description */
             $description = $this->input('description');
-            if ($description === null || $description === ''){
+
+            if($description === null){
                 $validator->errors()->add('description', '商品説明を入力してください');
                 $validator->errors()->add('description', '120文字以内で入力してください');
             }

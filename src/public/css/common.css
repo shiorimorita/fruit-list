@@ -2,20 +2,24 @@
  ■ common
 -------------------------------------------*/
 
-.sub-title{
-   font-size: 32px;
+body{
+    background-color: #F8F8F8;
 }
 
-.input-common{
+.sub-title {
+    font-size: 32px;
+}
+
+.input-common {
     border: 1px solid #E0DFDE;
     border-radius: 5px;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -24,7 +28,6 @@ a{
     flex-direction: column;
     height: 100%;
 }
-
 
 .content {
     display: flex;
@@ -38,6 +41,94 @@ a{
 .errors-message {
     color: #FD0707;
     font-size: 14px;
+}
+
+/* custom file */
+.custom-btn {
+    border: 1px solid #4B4B4B;
+    padding: 2px;
+    background: #E0DFDE;
+}
+
+/* check box */
+
+/* 常に表示 */
+.custom-checkbox {
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    margin-right: 15px;
+    gap: 8px;
+}
+
+/* チェックボックスは非表示 見えないけどクリックできる */
+.custom-checkbox__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 20px;
+    z-index: 1;
+}
+
+/* 丸いチェックマーク */
+.checkmark {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.custom-checkbox__input:checked+.checkmark {
+    background-color: #4B4B4B;
+    border-color: #4B4B4B;
+}
+
+.custom-checkbox__input:checked+.checkmark::after {
+    display: block;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* btn */
+.btns-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.btn__back {
+    display: inline-block;
+    height: 50px;
+    background: #E0DFDE;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+
+}
+
+.btn-save {
+    display: inline-block;
+    height: 50px;
+    background: #F5C800;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 /*-------------------------------------------
@@ -58,7 +149,7 @@ a{
 
 .header-title {
     color: #F5C800;
-    font-family: 'jsMath-cmti10',sans-serif;
+    font-family: 'jsMath-cmti10', sans-serif;
     font-size: 30px;
     font-weight: lighter;
 }

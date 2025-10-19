@@ -29,16 +29,23 @@
                         class="register-content__label--span">必須</span></label>
                 <input type="text" class="register-content__input input-common" placeholder="値段を入力" id="price"
                     name="price" value="{{old('price')}}">
-
             </div>
+            <ul class="errors-group">
+                @if($errors->has('price'))
+                @foreach($errors->get('price') as $error)
+                <li class="errors-message">{{$error}}</li>
+                @endforeach
+                @endif
+            </ul>
 
             <div class="register-content__group">
                 <label for="image" class="register-content__label">商品画像<span
                         class="register-content__label--span">必須</span></label>
                 <!-- preview -->
-                <img src="" alt="画像プレビュー" class="image-preview">
-                <input type="file" name="image" class="register-content__image" id="image">
-
+                <img src="" alt="画像プレビュー" class="image-preview" style="display: none;">
+                <input type="file" name="image" class="register-content__image" id="image" style="display: none;">
+                <button id="fileSelect" type="button" class="custom-btn register-custom__btn">ファイルを選択</button>
+                <span class="detail-custom__btn--span"></span>
 
                 <img src="" alt="">
                 <ul class="errors-group">
@@ -55,11 +62,14 @@
                 <label for="name" class="register-content__label">季節<span
                         class="register-content__label--span">必須</span><span
                         class="register-content__label--span">複数選択可</span></label>
-
-                <div class="register-content__radios">
+                <!-- checkbox -->
+                <div class="register-content__checkbox">
                     @foreach($seasons as $season)
-                    <label for="" class="radio-label"><input type="checkbox" class="radio-label__input"
-                            value="{{$season->id}}" name="seasons[]">{{$season->name}}</label>
+                    <label for="" class="custom-checkbox">
+                        <input type="checkbox" class="custom-checkbox__input" value="{{$season->id}}" name="seasons[]">
+                        <span class="checkmark"></span>
+                        <span class="label-text">{{$season->name}}</span>
+                    </label>
                     @endforeach
                 </div>
                 <ul class="errors-group">
@@ -85,9 +95,10 @@
                 </ul>
             </div>
 
-            <div class="register-content__btns">
-                <input type="button" value="戻る" class="register-content__btns--back" onclick="location.href='/products/register' ">
-                <input type="submit" value="登録" class="register-content__btns--register">
+            <div class="register-content__btns btns-wrapper">
+                <input type="button" value="戻る" class="register-content__btns--back btn__back"
+                    onclick="location.href='/products/' ">
+                <input type="submit" value="登録" class="register-content__btns--register btn-save">
             </div>
         </form>
     </div>

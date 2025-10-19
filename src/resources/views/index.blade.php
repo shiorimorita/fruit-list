@@ -19,20 +19,24 @@
                 <input type="submit" value="検索" class="product-function__search--btn">
 
                 <h3 class="product-function--text">価格順で表示</h3>
-                <select name="sort" id="" class="product-function__select" onchange="this.form.submit()">
 
-                    <option value="" class="product-function__select--option" disabled selected>価格で並び替え</option>
-                    <option value="price_up" class="product-function__select--option" {{request('sort') == 'price_up' ? 'selected' : ''}}>価格が高い順</option>
-                    <option value="price_down" class="product-function__select--option" {{request('sort') == 'price_down' ? 'selected' : ''}}>価格が安い順</option>
-                </select>
+                <div class="custom-select-wrapper">
+                    <select name="sort" id="" class="product-function__select" onchange="this.form.submit()">
+
+                        <option value="" class="product-function__select--option" disabled selected>価格で並び替え</option>
+                        <option value="price_up" class="product-function__select--option" {{request('sort')=='price_up'
+                            ? 'selected' : '' }}>価格が高い順</option>
+                        <option value="price_down" class="product-function__select--option"
+                            {{request('sort')=='price_down' ? 'selected' : '' }}>価格が安い順</option>
+                    </select>
+                </div>
             </form>
 
             @if(! empty($sort_label))
-                <div class="sort_label__tag">
-                    <span class="sort_label__tag--text">{{$sort_label}}</span>
-                    
-                    <a href="/products/" class="sort_label__tag__link">×</a>
-                </div>
+            <div class="sort_label__tag">
+                <span class="sort_label__tag--text">{{$sort_label}}</span>
+                <a href="/products/" class="sort_label__tag__link">×</a>
+            </div>
             @endif
         </div>
 
@@ -50,12 +54,8 @@
             </a>
         </div>
     </div>
-
-    <div class="pagination">
+    <div class="pagination--wrapper">
         {{$products->links()}}
     </div>
-
 </div>
-
-
 @endsection

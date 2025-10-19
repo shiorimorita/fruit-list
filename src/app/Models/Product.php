@@ -18,7 +18,6 @@ class Product extends Model
     }
 
     /* search */
-
     public function scopeSearchKeywords($query,$keyword){
         if(!empty($keyword)){
 

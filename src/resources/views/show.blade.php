@@ -56,12 +56,13 @@
 
                 <div class="show-detail__check-group">
                     @foreach($seasons as $season)
-                    <label>
-                        <input type="checkbox" name="seasons[]" class="show-detail__checkbox" value="{{$season->id}}"
+                    <label for="" class="custom-checkbox">
+                        <input type="checkbox" name="seasons[]" class="custom-checkbox__input" value="{{$season->id}}"
                             {{$errors->has('seasons') ? '' : (in_array($season->id, old('seasons',
                         $product->seasons->pluck('id')->toArray())) ?
                         'checked' : '') }}>
-                        {{ $season->name }}
+                        <span class="checkmark"></span>
+                        <span class="label-text">{{$season->name}}</span>
                     </label>
                     @endforeach
                 </div>
@@ -76,7 +77,9 @@
                 </div>
             </div>
         </div>
-        <input type="file" class="show-detail__input" name="image" id="image">
+        <input type="file" class="show-detail__input" name="image" id="image" style="display: none;">
+        <button id="fileSelect" type="button" class="custom-btn detail-custom__btn">ファイルを選択</button>
+        <span class="detail-custom__btn--span"></span>
         <ul class="errors-group">
             @if($errors->has('image'))
             @foreach($errors->get('image') as $error)
@@ -99,14 +102,14 @@
         </div>
 
         <div class="detail-btns">
-            <div class="detail-btns__wrapper">
+            <div class="detail-btns__wrapper btns-wrapper">
                 <div class="detai-btn__back">
-                    <input type="button" class="detai-btn__back--btn" value="戻る"
+                    <input type="button" class="detai-btn__back--btn btn__back" value="戻る"
                         onclick="location.href='//localhost/products/' ">
                 </div>
 
                 <div class="detai-btn__update">
-                    <input type="submit" class="detai-btns__update--btn" value="変更を保存">
+                    <input type="submit" class="detai-btns__update--btn btn-save" value="変更を保存">
                 </div>
             </div>
     </form>

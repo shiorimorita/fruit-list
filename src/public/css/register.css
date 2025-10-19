@@ -1,10 +1,6 @@
 /*-------------------------------------------
  ■ total valance
 -------------------------------------------*/
-body {
-    background-color: #F8F8F8;
-}
-
 .register__inner {
     display: flex;
     justify-content: center;
@@ -42,11 +38,6 @@ body {
     margin-left: 10px;
 }
 
-.radio-label__input {
-    margin-right: 5px;
-}
-
-
 .register-content__input,
 .register-content__textarea,
 .register-content__image {
@@ -76,29 +67,7 @@ body {
     text-align: left;
 }
 
-
-.register-content__btns {
-    text-align: center;
-}
-
-.register-content__btns--back,
-.register-content__btns--register {
-    display: inline-block;
-    width: 25%;
-    margin: 0 auto;
-    height: 50px;
-}
-
-.register-content__btns--back {
-    background-color: #E0DFDE;
-}
-
-.register-content__btns--register {
-    background-color: #F5C800;
-    margin-left: 15px;
-}
-
-.register-content__radios {
+.register-content__checkbox {
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -121,7 +90,7 @@ body {
 -------------------------------------------*/
 @media screen and (max-width:1280px) {
 
-    .content{
+    .content {
         padding: 0;
     }
 
