@@ -18,10 +18,23 @@
         @csrf
         @method('patch')
         <div class="show-detail">
-
             <div class="show-detail__img">
-                <img src="{{asset('storage/' . $product['image'])}}" alt="" class="show-detail__img--img image-preview"
-                    {{ $errors->has('image') ? 'hidden' : ''}}>
+                @if(!$errors->has('image'))
+                <div class="show-detail__img--test">
+                    <img src="{{asset('storage/' . $product['image'])}}" alt=""
+                        class="show-detail__img--img image-preview" {{ $errors->has('image') ? 'hidden' : ''}}>
+                </div>
+                @endif
+                    <input type="file" class="show-detail__input" name="image" id="image" style="display: none;">
+                    <button id="fileSelect" type="button" class="custom-btn detail-custom__btn">ファイルを選択</button>
+                    <span class="detail-custom__btn--span"></span>
+                    <ul class="errors-group">
+                        @if($errors->has('image'))
+                        @foreach($errors->get('image') as $error)
+                        <li class="errors-message">{{$error}}</li>
+                        @endforeach
+                        @endif
+                    </ul>
             </div>
 
             <div class="show-detail__item">
@@ -77,16 +90,6 @@
                 </div>
             </div>
         </div>
-        <input type="file" class="show-detail__input" name="image" id="image" style="display: none;">
-        <button id="fileSelect" type="button" class="custom-btn detail-custom__btn">ファイルを選択</button>
-        <span class="detail-custom__btn--span"></span>
-        <ul class="errors-group">
-            @if($errors->has('image'))
-            @foreach($errors->get('image') as $error)
-            <li class="errors-message">{{$error}}</li>
-            @endforeach
-            @endif
-        </ul>
 
         <label class="show-detail__item--label">商品説明</label>
         <textarea name="description" cols="30" rows="5"

@@ -66,7 +66,8 @@
                 <div class="register-content__checkbox">
                     @foreach($seasons as $season)
                     <label for="" class="custom-checkbox">
-                        <input type="checkbox" class="custom-checkbox__input" value="{{$season->id}}" name="seasons[]">
+                        <input type="checkbox" class="custom-checkbox__input" value="{{$season->id}}" name="seasons[]"
+                        {{in_array($season->id, old('seasons',[])) ? 'checked' : ''}}>
                         <span class="checkmark"></span>
                         <span class="label-text">{{$season->name}}</span>
                     </label>

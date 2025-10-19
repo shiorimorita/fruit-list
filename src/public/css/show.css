@@ -27,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 25px;
 }
 
 
@@ -37,7 +38,7 @@
 
 .show-detail__img {
     width: 50%;
-    height: 350px;
+    height: 400px;
 }
 
 .show-detail__img--img {
@@ -53,6 +54,10 @@
 
 }
 
+.show-detail__item--label:last-child{
+    background-color: green;
+}
+
 .detail-error{
     min-height: 30px;
 }
@@ -60,7 +65,7 @@
 .show-detail__item--label,
 .show-detail__item--input,
 .show-detail__checkbox {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
    
 } 
 
@@ -87,10 +92,6 @@
     border-radius: 5px;
 }
 
-.detail-custom__btn {
-    margin-bottom: 10px;
-}
-
 /* btns */
 
 .detail-btns{
@@ -98,4 +99,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 20px 50px 0 50px;
+}
+
+
+/* 調製中 */
+.detail-custom__btn{
+    display: block;
+    margin-bottom: 20px;
 }
