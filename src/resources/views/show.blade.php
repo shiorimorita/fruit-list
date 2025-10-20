@@ -55,7 +55,7 @@
                 </div>
 
                 <label for="name" class="show-detail__item--label">値段</label>
-                <input type="text" class="show-detail__item--input" id="price" name="price"
+                <input type="number" class="show-detail__item--input" id="price" name="price"
                     value="{{$errors->has('price') ? '' : old('price',$product['price'])}}">
                 <div class="detail-error">
                     @if($errors->has('price'))

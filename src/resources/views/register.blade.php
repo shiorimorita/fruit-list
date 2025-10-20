@@ -27,7 +27,7 @@
             <div class="register-content__group">
                 <label for="price" class="register-content__label">値段<span
                         class="register-content__label--span">必須</span></label>
-                <input type="text" class="register-content__input input-common" placeholder="値段を入力" id="price"
+                <input type="number" class="register-content__input input-common" placeholder="値段を入力" id="price"
                     name="price" value="{{old('price')}}">
             </div>
             <ul class="errors-group">
