@@ -45,21 +45,20 @@ class ProductController extends Controller
     }
 
     /* products update */
-    public function update(ProductRequest $request)
+    public function update(ProductRequest $request,$id)
     {
-        $product = $request->only(['name', 'price', 'description']);
-        $pash = $request->file('image')->store('images', 'public');
-        $product['image'] = $pash;
+        $data = $request->only(['name', 'price', 'description']);
+        $data['image']= $request->file('image')->store('images','public');
 
-        Product::find($request->id)->update($product);
-        Product::find($request->id)->seasons()->sync($request->seasons);
+        $product = Product::find($id);
+        $product->update($data);
+        $product->seasons()->sync($request->seasons);
         return redirect('/products');
     }
 
     /* products delete */
     public function delete($id)
     {
-
         $product = Product::find($id);
         $product->seasons()->detach();
         $product->delete();

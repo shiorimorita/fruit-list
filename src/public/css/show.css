@@ -31,8 +31,8 @@
 }
 
 
-.show-detail__item{
-        width: 45%;
+.show-detail__item {
+    width: 45%;
     height: 350px;
 }
 
@@ -43,7 +43,7 @@
 
 .show-detail__img--img {
     width: 100%;
-    height: 100%;
+    height: 350px;
     object-fit: cover;
     border: 1px solid #ddd;
     object-position: center;
@@ -54,20 +54,20 @@
 
 }
 
-.show-detail__item--label:last-child{
+.show-detail__item--label:last-child {
     background-color: green;
 }
 
-.detail-error{
+.detail-error {
     min-height: 30px;
 }
 
 .show-detail__item--label,
 .show-detail__item--input,
 .show-detail__checkbox {
-    margin-bottom: 15px;
-   
-} 
+    margin: 10px 0;
+
+}
 
 
 .show-detail__item--input {
@@ -84,7 +84,7 @@
     justify-content: space-between;
 }
 
-.show-detail__description{
+.show-detail__description {
     width: 100%;
     padding: 10px;
     height: 200px;
@@ -94,16 +94,18 @@
 
 /* btns */
 
-.detail-btns{
+.detail-btns {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 50px 0 50px;
 }
 
+.detail-custom__btn {
+    margin-right: 10px;
+}
 
-/* 調製中 */
-.detail-custom__btn{
-    display: block;
-    margin-bottom: 20px;
+.detail-custom__btn--span {
+    display: inline-block;
+    color: #888888;
 }

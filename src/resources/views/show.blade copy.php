@@ -4,6 +4,9 @@
 @endsection
 @section('content')
 
+<input type="text" name="name[]">
+<input type="text" name="name[]">
+
 <div class="show-wrapper">
 
     <div class="show-link">

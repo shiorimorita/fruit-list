@@ -13,28 +13,31 @@
         <span class="show-link__span">{{$product['name']}}</span>
     </div>
 
-
     <form action="/products/{{$product['id']}}/update" method="post" class="update-form" enctype="multipart/form-data">
         @csrf
         @method('patch')
         <div class="show-detail">
             <div class="show-detail__img">
-                @if(!$errors->has('image'))
-                <div class="show-detail__img--test">
-                    <img src="{{asset('storage/' . $product['image'])}}" alt=""
-                        class="show-detail__img--img image-preview" {{ $errors->has('image') ? 'hidden' : ''}}>
-                </div>
+                    @if(! $errors->has('image'))
+                    <img src="{{asset('storage/' . $product[('image')])}}" alt="" class="show-detail__img--img image-preview">
+                    @else
+                    <img src="{{''}}" alt=""
+                        class="show-detail__img--img image-preview" style="display: none;">
+                    @endif
+                
+                <input type="file" class="show-detail__input" name="image" id="image" style="display: none;">
+                <button id="fileSelect" type="button" class="custom-btn detail-custom__btn">ファイルを選択</button>
+                @if(! $errors->has('image'))
+                <span class="detail-custom__btn--span">{{basename($product['image'])}}</span>
+                @else <span class="detail-custom__btn--span"></span>
                 @endif
-                    <input type="file" class="show-detail__input" name="image" id="image" style="display: none;">
-                    <button id="fileSelect" type="button" class="custom-btn detail-custom__btn">ファイルを選択</button>
-                    <span class="detail-custom__btn--span"></span>
-                    <ul class="errors-group">
-                        @if($errors->has('image'))
-                        @foreach($errors->get('image') as $error)
-                        <li class="errors-message">{{$error}}</li>
-                        @endforeach
-                        @endif
-                    </ul>
+                <ul class="errors-group">
+                    @if($errors->has('image'))
+                    @foreach($errors->get('image') as $error)
+                    <li class="errors-message">{{$error}}</li>
+                    @endforeach
+                    @endif
+                </ul>
             </div>
 
             <div class="show-detail__item">
@@ -65,7 +68,6 @@
                 </div>
 
                 <label for="name" class="show-detail__item--label">季節</label>
-                <input type="hidden" name="id" value="{{$product->id}}">
 
                 <div class="show-detail__check-group">
                     @foreach($seasons as $season)

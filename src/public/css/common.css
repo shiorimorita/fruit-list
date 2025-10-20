@@ -41,6 +41,7 @@ a {
 .errors-message {
     color: #FD0707;
     font-size: 14px;
+    padding: 2px;
 }
 
 /* custom file */
