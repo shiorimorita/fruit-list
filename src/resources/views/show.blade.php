@@ -76,6 +76,7 @@
                             {{$errors->has('seasons') ? '' : (in_array($season->id, old('seasons',
                         $product->seasons->pluck('id')->toArray())) ?
                         'checked' : '') }}>
+
                         <span class="checkmark"></span>
                         <span class="label-text">{{$season->name}}</span>
                     </label>
