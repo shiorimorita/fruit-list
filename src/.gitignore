@@ -13,3 +13,5 @@ yarn-error.log
 /.idea
 /.vscode
 docker/mysql/data/
+!/src/storage/app/public/images/
+!/src/storage/app/public/images/*
