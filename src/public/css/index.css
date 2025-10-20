@@ -164,6 +164,7 @@
     background-color: white;
     padding: 15px;
     width: 100%;
+    cursor: pointer;
 }
 
 .custom-select-wrapper {
@@ -209,7 +210,6 @@
 }
 
 .product-function {
-
     padding-bottom: 30px;
     border-bottom: 1px solid #ddd;
     height: 100%;

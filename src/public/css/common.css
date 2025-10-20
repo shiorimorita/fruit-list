@@ -53,7 +53,6 @@ a {
 
 /* check box */
 
-/* 常に表示 */
 .custom-checkbox {
     position: relative;
     align-items: center;
@@ -64,7 +63,6 @@ a {
     gap: 8px;
 }
 
-/* チェックボックスは非表示 見えないけどクリックできる */
 .custom-checkbox__input {
     position: absolute;
     opacity: 0;
@@ -73,7 +71,6 @@ a {
     z-index: 1;
 }
 
-/* 丸いチェックマーク */
 .checkmark {
     position: relative;
     height: 20px;
