@@ -29,12 +29,16 @@ a {
     height: 100%;
 }
 
+::placeholder {
+    color: #E0DFDE;
+}
+
 .content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    padding: 48px;
+    padding: 24px;
 }
 
 /* error */

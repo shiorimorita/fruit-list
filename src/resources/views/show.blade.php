@@ -54,7 +54,7 @@
                     @endif
                 </div>
 
-                <label for="name" class="show-detail__item--label">値段</label>
+                <label for="price" class="show-detail__item--label">値段</label>
                 <input type="number" class="show-detail__item--input" id="price" name="price"
                     value="{{$errors->has('price') ? '' : old('price',$product['price'])}}">
                 <div class="detail-error">
@@ -67,7 +67,7 @@
                     @endif
                 </div>
 
-                <label for="name" class="show-detail__item--label">季節</label>
+                <label for="" class="show-detail__item--label">季節</label>
 
                 <div class="show-detail__check-group">
                     @foreach($seasons as $season)
@@ -94,9 +94,9 @@
             </div>
         </div>
 
-        <label class="show-detail__item--label">商品説明</label>
-        <textarea name="description" cols="30" rows="5"
-            class="show-detail__description">{{$errors->has('description') ? '' : old('description', $product['description']) }}</textarea>
+        <label for="description" class="show-detail__item--label">商品説明</label>
+        <textarea name="description" cols="30" rows="5" id="description"
+            class="show-detail__description">{{old('description',$product['description'] ?? '')}}</textarea>
         <div class="detail-error">
             @if($errors->has('description'))
             <ul class="errors-group">

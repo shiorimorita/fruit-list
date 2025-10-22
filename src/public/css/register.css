@@ -1,42 +1,33 @@
-/*-------------------------------------------
- ■ total valance
--------------------------------------------*/
-.register__inner {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-}
-
 .register-form {
     padding: 5px;
     width: 40vw;
+    margin: 0 auto;
 }
 
-/*-------------------------------------------
- ■ parts detail
--------------------------------------------*/
-
+/* label */
 .register-content__label {
     display: flex;
-    margin-bottom: 15px;
     align-items: center;
+    gap: 10px;
+}
 
+.register-content__label--span {
+    font-size: 12px;
 }
 
 .register-content__label--span:first-of-type {
     padding: 2px 8px;
     background-color: #FD0707;
     color: #FFFFFF;
-    margin-left: 10px;
-    font-size: 12px;
 }
 
 .register-content__label--span:nth-of-type(2) {
     color: #FD0707;
-    font-size: 12px;
-    margin-left: 10px;
 }
+
+/*-------------------------------------------
+ ■ input
+-------------------------------------------*/
 
 .register-content__input,
 .register-content__textarea,
@@ -45,8 +36,15 @@
     width: 100%;
 }
 
-.register-content__group,
-.register-content__title {
+/* margin bottom */
+.register-content__input,
+.register-content__textarea,
+.register-content__image,
+.register-content__label{
+margin-bottom: 15px;
+}
+
+.register-content__group {
     padding: 5px;
 }
 
@@ -56,42 +54,37 @@
     background-color: #FFFFFF;
 }
 
-
 .register-content__textarea {
     height: 150px;
     resize: none;
-    margin-bottom: 15px;
 }
 
 .register-content__title {
     text-align: left;
+    margin-bottom: 24px;
 }
 
 .register-content__checkbox {
     width: 50%;
     display: flex;
     justify-content: space-between;
+    margin: 15px 0 20px 0;
 }
 
+/* 画像プレビュー */
 .image-preview {
     height: 200px;
     width: 200px;
     object-fit: cover;
 }
 
+/* カスタムボタン */
+.register-custom__btn{
+    margin: 5px 0;
+}
+
 /* error */
 .errors-message {
     color: #FD0707;
     font-size: 14px;
-}
-
-/*-------------------------------------------
- ■ responsive
--------------------------------------------*/
-@media screen and (max-width:1280px) {
-
-    .content {
-        padding: 0;
-    }
-
 }

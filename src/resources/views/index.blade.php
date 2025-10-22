@@ -1,6 +1,7 @@
 @extends('layouts.common')
 @section('css')
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
+<script src="{{asset('js/register.js')}}" defer></script>
 @endsection
 @section('content')
 <div class="products-wrapper">
@@ -11,7 +12,6 @@
     </div>
 
     <div class="flex-product">
-
         <div class="product-function">
             <form action="/products/search" method="get" class="search-form">
                 <input type="text" class="product-function__input" value="{{request('keyword')}}" placeholder="商品名で検索"
@@ -22,7 +22,6 @@
 
                 <div class="custom-select-wrapper">
                     <select name="sort" id="" class="product-function__select" onchange="this.form.submit()">
-
                         <option value="" class="product-function__select--option" disabled selected>価格で並び替え</option>
                         <option value="price_up" class="product-function__select--option" {{request('sort')=='price_up'
                             ? 'selected' : '' }}>価格が高い順</option>
@@ -44,14 +43,15 @@
             @foreach($products as $product)
             <div class="product-img__group">
                 <a href="/products/{{$product->id}}" class="product-detail__link">
+
                     <img src="{{asset('storage/' . $product->image)}}" alt="" class="product-img__group--img">
                     <div class="product-img__text">
                         <p class="product-img__text--name">{{$product->name}}</p>
                         <p class="product-img__text--price">{{ "¥".$product->price}}</p>
                     </div>
+                </a>
             </div>
             @endforeach
-            </a>
         </div>
     </div>
     <div class="pagination--wrapper">
