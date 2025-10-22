@@ -1,4 +1,4 @@
-# laravel-docker-template
+# もぎたて
 ## 環境構築
 ### Dokerビルド
 1. GitHub からリポジトリをクローン
