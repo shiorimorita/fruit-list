@@ -97,17 +97,19 @@
             </div>
         </div>
 
-        <label for="description" class="show-detail__item--label">商品説明</label>
-        <textarea name="description" cols="30" rows="5" id="description" class="show-detail__description"
-            placeholder="商品の説明を入力">{{old('description',$product['description'] ?? '')}}</textarea>
-        <div class="detail-error">
-            @if($errors->has('description'))
-            <ul class="errors-group">
-                @foreach($errors->get('description') as $error)
-                <li class="errors-message">{{$error}}</li>
-                @endforeach
-            </ul>
-            @endif
+        <div class="description-group">
+            <label for="description" class="show-detail__item--label">商品説明</label>
+            <textarea name="description" cols="30" rows="5" id="description" class="show-detail__description"
+                placeholder="商品の説明を入力">{{old('description',$product['description'] ?? '')}}</textarea>
+            <div class="detail-error">
+                @if($errors->has('description'))
+                <ul class="errors-group">
+                    @foreach($errors->get('description') as $error)
+                    <li class="errors-message">{{$error}}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
         </div>
     </form>
 

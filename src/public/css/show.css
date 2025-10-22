@@ -67,6 +67,14 @@
     padding: 10px;
 }
 
+.show-detail__check-group{
+    margin-bottom: 15px;
+}
+
+.description-group{
+    margin-top: 70px;
+}
+
 .show-detail__description {
     width: 100%;
     padding: 10px;
