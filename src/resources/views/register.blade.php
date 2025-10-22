@@ -14,13 +14,15 @@
                         class="register-content__label--span">必須</span></label>
                 <input type="text" class="register-content__input input-common" placeholder="商品名を入力" id="name"
                     name="name" value="{{old('name')}}">
-                <ul class="errors-group">
+                <div class="detail-error">
                     @if($errors->has('name'))
-                    @foreach($errors->get('name') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
+                    <ul class="errors-group">
+                        @foreach($errors->get('name') as $error)
+                        <li class="errors-message">{{$error}}</li>
+                        @endforeach
+                    </ul>
                     @endif
-                </ul>
+                </div>
             </div>
 
             <div class="register-content__group">
@@ -28,13 +30,15 @@
                         class="register-content__label--span">必須</span></label>
                 <input type="number" class="register-content__input input-common" placeholder="値段を入力" id="price"
                     name="price" value="{{old('price')}}">
-                <ul class="errors-group">
+                <div class="detail-error">
                     @if($errors->has('price'))
-                    @foreach($errors->get('price') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
+                    <ul class="errors-group">
+                        @foreach($errors->get('price') as $error)
+                        <li class="errors-message">{{$error}}</li>
+                        @endforeach
+                    </ul>
                     @endif
-                </ul>
+                </div>
             </div>
 
             <div class="register-content__group">
@@ -45,13 +49,15 @@
                 <input type="file" name="image" class="register-content__image" id="image" style="display: none;">
                 <button id="fileSelect" type="button" class="custom-btn register-custom__btn">ファイルを選択</button>
                 <span class="detail-custom__btn--span"></span>
-                <ul class="errors-group">
+                <div class="detail-error">
                     @if($errors->has('image'))
-                    @foreach($errors->get('image') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
+                    <ul class="errors-group">
+                        @foreach($errors->get('image') as $error)
+                        <li class="errors-message">{{$error}}</li>
+                        @endforeach
+                    </ul>
                     @endif
-                </ul>
+                </div>
             </div>
 
             <!-- saeason -->
@@ -60,7 +66,7 @@
                         class="register-content__label--span">必須</span><span
                         class="register-content__label--span">複数選択可</span></label>
                 <!-- checkbox -->
-                <div class="register-content__checkbox">
+                <div class="register-content__checkbox common-check__group">
                     @foreach($seasons as $season)
                     <label for="" class="custom-checkbox">
                         <input type="checkbox" class="custom-checkbox__input" value="{{$season->id}}" name="seasons[]"
@@ -70,13 +76,15 @@
                     </label>
                     @endforeach
                 </div>
-                <ul class="errors-group">
+                <div class="detail-error">
                     @if($errors->has('seasons'))
-                    @foreach($errors->get('seasons') as $error)
-                    <li class="errors-message">{{$error}}</li>
-                    @endforeach
+                    <ul class="errors-group">
+                        @foreach($errors->get('seasons') as $error)
+                        <li class="errors-message">{{$error}}</li>
+                        @endforeach
+                    </ul>
                     @endif
-                </ul>
+                </div>
             </div>
 
             <div class="register-content__group">

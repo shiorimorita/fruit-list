@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Season;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class SeasonsTableSeeder extends Seeder
 {

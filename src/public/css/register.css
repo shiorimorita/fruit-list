@@ -64,13 +64,6 @@ margin-bottom: 15px;
     margin-bottom: 24px;
 }
 
-.register-content__checkbox {
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0 20px 0;
-}
-
 /* 画像プレビュー */
 .image-preview {
     height: 200px;

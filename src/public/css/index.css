@@ -21,6 +21,7 @@
     text-align: left;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .flex-container__title {
@@ -138,6 +139,10 @@
     width: 31%;
     margin: 10px;
     height: 40%;
+}
+
+.product-img__group:hover{
+    opacity: 0.6;
 }
 
 .product-img__group img {

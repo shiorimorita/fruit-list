@@ -2,7 +2,7 @@
  ■ common
 -------------------------------------------*/
 
-body{
+body {
     background-color: #F8F8F8;
 }
 
@@ -38,7 +38,7 @@ a {
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    padding: 24px;
+    padding: 36px;
 }
 
 /* error */
@@ -56,6 +56,12 @@ a {
 }
 
 /* check box */
+.common-check__group {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-bottom: 15px;
+}
 
 .custom-checkbox {
     position: relative;
@@ -63,8 +69,7 @@ a {
     cursor: pointer;
     user-select: none;
     display: flex;
-    margin-right: 15px;
-    gap: 8px;
+    gap: 5px;
 }
 
 .custom-checkbox__input {
@@ -149,7 +154,8 @@ a {
     height: 50px;
 }
 
-.header-title {
+.header-title__link {
+    display: block;
     color: #F5C800;
     font-family: 'jsMath-cmti10', sans-serif;
     font-size: 30px;

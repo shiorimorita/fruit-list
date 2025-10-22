@@ -1,7 +1,6 @@
 @extends('layouts.common')
 @section('css')
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
-<script src="{{asset('js/register.js')}}" defer></script>
 @endsection
 @section('content')
 <div class="products-wrapper">
@@ -55,7 +54,7 @@
         </div>
     </div>
     <div class="pagination--wrapper">
-        {{$products->links()}}
+        {{$products->appends(request()->all())->links()}}
     </div>
 </div>
 @endsection

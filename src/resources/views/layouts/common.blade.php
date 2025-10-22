@@ -13,7 +13,9 @@
 <body>
     <div class="app">
         <header class="header">
-            <h1 class="header-title">mogitate</h1>
+            <h1 class="header-title">
+                <a href="/products" class="header-title__link">mogitate</a>
+            </h1>
         </header>
         <div class="content">
             @yield('content')
